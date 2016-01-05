@@ -6,6 +6,8 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 
+import display.Frame;
+
 public class Run_Crystal_Growth {
 	
 	private static ArrayList<Grain> Grains;
@@ -58,9 +60,10 @@ public class Run_Crystal_Growth {
 					// Check if this new grain lies within a previously existing
 					// grain. If it does, the grain will not be added. If it 
 					// does not, it will be added to the sample.
-					if(grain.checkGrainCircleIntersection(Grains) == true){
+					if(grain.checkAllGrainCircleIntersection(Grains) == true){
 						// Grain failed.
 						failedGrains++;
+						System.out.println("fffff");
 					} else {
 						//Grain added.
 						Grains.add(grain);
